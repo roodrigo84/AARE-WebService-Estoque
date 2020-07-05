@@ -18,7 +18,7 @@ export class EstoqueController {
     }
 
     @Put(":id")
-    update(@Param() id : number, @Body() estoque : Estoque){
+    update(@Param(`id`) id : number, @Body() estoque : Estoque){
         estoque.id = Number(id);
         return this.service.update(estoque);
     }

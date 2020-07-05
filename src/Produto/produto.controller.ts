@@ -27,7 +27,7 @@ export class ProdutoController {
     }
 
     @Put(":id")
-    update(@Param() id : number, @Body() produtoDto : ProdutoDto){
+    update(@Param(`id`) id : number, @Body() produtoDto : ProdutoDto){
         produtoDto.id = Number(id);
         const produto = plainToClass(Produto, produtoDto);
         return this.produto.update(produto);
